@@ -25,6 +25,24 @@ result.setAttribute('id', 'result');
 result.innerText = "";
 document.body.appendChild(result);
 
+//print as a text color as given input
 
+const input = document.createElement('input');
+input.setAttribute('type', 'text');
+input.setAttribute('placeholder', 'enter your color');
 
+const button = document.createElement("button");
+button.innerText = "submit";
+button.setAttribute("onclick", "addItem()");
 
+const list = document.createElement("ul");
+
+document.body.append(input , button , list);
+
+function addItem(){
+  const listItem = document.createElement("li");
+  listItem.innerText = input.value;
+  listItem.style.color = input.value;
+  list.append(listItem);
+  input.value = "";
+}
